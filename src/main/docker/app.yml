@@ -1,0 +1,20 @@
+version: '2'
+services:
+    gestion_mobile-app:
+        image: gestion_mobile
+        environment:
+            - _JAVA_OPTIONS=-Xmx512m -Xms256m
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://gestion_mobile-postgresql:5432/gestion_mobile
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_JEST_URI=http://gestion_mobile-elasticsearch:9200
+        ports:
+            - 8080:8080
+    gestion_mobile-postgresql:
+        extends:
+            file: postgresql.yml
+            service: gestion_mobile-postgresql
+    gestion_mobile-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: gestion_mobile-elasticsearch
