@@ -1,0 +1,34 @@
+{
+    "name": "Commission",
+    "fields": [
+        {
+            "fieldName": "montantmin",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "montantmax",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "commission",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "comptes",
+            "otherEntityName": "compte",
+            "otherEntityRelationshipName": "commission"
+        }
+    ],
+    "changelogDate": "20181122144341",
+    "entityTableName": "commission",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

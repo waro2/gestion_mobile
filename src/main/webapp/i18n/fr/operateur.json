@@ -1,0 +1,25 @@
+{
+    "gestionMobileApp": {
+        "operateur": {
+            "home": {
+                "title": "Operateurs",
+                "createLabel": "Créer un nouveau Operateur",
+                "createOrEditLabel": "Créer ou éditer un Operateur",
+                "search": "Recherche pour Operateur"
+            },
+            "created": "Un nouveau Operateur a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Operateur avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Operateur avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Operateur {{ id }} ?"
+            },
+            "detail": {
+                "title": "Operateur"
+            },
+            "nom": "Nom",
+            "datecreation": "Datecreation",
+            "comptes": "Comptes",
+            "clients": "Clients"
+        }
+    }
+}

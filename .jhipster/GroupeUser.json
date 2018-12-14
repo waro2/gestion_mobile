@@ -1,0 +1,36 @@
+{
+    "name": "GroupeUser",
+    "fields": [
+        {
+            "fieldName": "groupeutilisateur",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "groupes",
+            "otherEntityName": "groupe",
+            "otherEntityRelationshipName": "groupeUser"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "utilisateurs",
+            "otherEntityName": "utilisateur",
+            "otherEntityRelationshipName": "groupeUser"
+        }
+    ],
+    "changelogDate": "20181122144340",
+    "entityTableName": "groupe_user",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

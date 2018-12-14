@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="operation">
+            <h2><span jhiTranslate="gestionMobileApp.operation.detail.title">Operation</span> {{operation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gestionMobileApp.operation.montant">Montant</span></dt>
+                <dd>
+                    <span>{{operation.montant}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.operation.fraiscommission">Fraiscommission</span></dt>
+                <dd>
+                    <span>{{operation.fraiscommission}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.operation.dateoperations">Dateoperations</span></dt>
+                <dd>
+                    <span>{{operation.dateoperations}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/operation', operation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

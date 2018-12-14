@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-utilisateur-heading" jhiTranslate="gestionMobileApp.utilisateur.home.createOrEditLabel">Create or edit a Utilisateur</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!utilisateur.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="utilisateur.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.utilisateur.login" for="field_login">Login</label>
+                    <input type="text" class="form-control" name="login" id="field_login"
+                        [(ngModel)]="utilisateur.login" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.utilisateur.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                        [(ngModel)]="utilisateur.nom" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.utilisateur.prenoms" for="field_prenoms">Prenoms</label>
+                    <input type="text" class="form-control" name="prenoms" id="field_prenoms"
+                        [(ngModel)]="utilisateur.prenoms" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.utilisateur.motdepass" for="field_motdepass">Motdepass</label>
+                    <input type="text" class="form-control" name="motdepass" id="field_motdepass"
+                        [(ngModel)]="utilisateur.motdepass" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.utilisateur.telephone" for="field_telephone">Telephone</label>
+                    <input type="text" class="form-control" name="telephone" id="field_telephone"
+                        [(ngModel)]="utilisateur.telephone" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.utilisateur.adresse" for="field_adresse">Adresse</label>
+                    <input type="text" class="form-control" name="adresse" id="field_adresse"
+                        [(ngModel)]="utilisateur.adresse" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.utilisateur.operation" for="field_operation">Operation</label>
+                    <select class="form-control" id="field_operation" name="operation" [(ngModel)]="utilisateur.operation" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="operationOption.id === utilisateur.operation?.id ? utilisateur.operation : operationOption" *ngFor="let operationOption of operations; trackBy: trackOperationById">{{operationOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.utilisateur.groupeUser" for="field_groupeUser">Groupe User</label>
+                    <select class="form-control" id="field_groupeUser" name="groupeUser" [(ngModel)]="utilisateur.groupeUser" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="groupeUserOption.id === utilisateur.groupeUser?.id ? utilisateur.groupeUser : groupeUserOption" *ngFor="let groupeUserOption of groupeusers; trackBy: trackGroupeUserById">{{groupeUserOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="utilisateur">
+            <h2><span jhiTranslate="gestionMobileApp.utilisateur.detail.title">Utilisateur</span> {{utilisateur.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gestionMobileApp.utilisateur.login">Login</span></dt>
+                <dd>
+                    <span>{{utilisateur.login}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.utilisateur.nom">Nom</span></dt>
+                <dd>
+                    <span>{{utilisateur.nom}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.utilisateur.prenoms">Prenoms</span></dt>
+                <dd>
+                    <span>{{utilisateur.prenoms}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.utilisateur.motdepass">Motdepass</span></dt>
+                <dd>
+                    <span>{{utilisateur.motdepass}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.utilisateur.telephone">Telephone</span></dt>
+                <dd>
+                    <span>{{utilisateur.telephone}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.utilisateur.adresse">Adresse</span></dt>
+                <dd>
+                    <span>{{utilisateur.adresse}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.utilisateur.operation">Operation</span></dt>
+                <dd>
+                    <div *ngIf="utilisateur.operation">
+                        <a [routerLink]="['/operation', utilisateur.operation?.id, 'view']">{{utilisateur.operation?.id}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.utilisateur.groupeUser">Groupe User</span></dt>
+                <dd>
+                    <div *ngIf="utilisateur.groupeUser">
+                        <a [routerLink]="['/groupe-user', utilisateur.groupeUser?.id, 'view']">{{utilisateur.groupeUser?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/utilisateur', utilisateur.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

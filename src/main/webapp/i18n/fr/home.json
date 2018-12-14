@@ -1,6 +1,6 @@
 {
     "home": {
-        "title": "Bienvenue, Java Hipster !",
+        "title": "Bienvenue sur,G-Mobile!",
         "subtitle": "Ceci est votre page d'accueil",
         "logged": {
             "message": "Vous êtes connecté en tant que \"{{username}}\"."
@@ -13,7 +13,7 @@
             "chat": "JHipster public chat room",
             "follow": "Suivez @java_hipster sur Twitter"
         },
-        "like": "Si vous aimez JHipster, donnez nous une étoile sur",
-        "github": "GitHub "
+        "like": "Votre plateforme de toutes sortes d'operations mobile chez",
+        "github": "T_Mobile"
     }
 }

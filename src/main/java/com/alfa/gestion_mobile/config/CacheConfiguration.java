@@ -38,6 +38,25 @@ public class CacheConfiguration {
             cm.createCache(com.alfa.gestion_mobile.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(com.alfa.gestion_mobile.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(com.alfa.gestion_mobile.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Compte.class.getName(), jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Operateur.class.getName(), jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Operateur.class.getName() + ".comptes", jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Operateur.class.getName() + ".clients", jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Operation.class.getName(), jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Operation.class.getName() + ".utilisateurs", jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Operation.class.getName() + ".typeoperations", jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.TypeOperation.class.getName(), jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Utilisateur.class.getName(), jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Utilisateur.class.getName() + ".clients", jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Client.class.getName(), jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Groupe.class.getName(), jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.GroupeUser.class.getName(), jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.GroupeUser.class.getName() + ".groupes", jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.GroupeUser.class.getName() + ".utilisateurs", jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Commission.class.getName(), jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Commission.class.getName() + ".comptes", jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Mouvement.class.getName(), jcacheConfiguration);
+            cm.createCache(com.alfa.gestion_mobile.domain.Mouvement.class.getName() + ".comptes", jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

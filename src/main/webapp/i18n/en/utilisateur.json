@@ -1,0 +1,30 @@
+{
+    "gestionMobileApp": {
+        "utilisateur": {
+            "home": {
+                "title": "Utilisateurs",
+                "createLabel": "Create a new Utilisateur",
+                "createOrEditLabel": "Create or edit a Utilisateur",
+                "search": "Search for Utilisateur"
+            },
+            "created": "A new Utilisateur is created with identifier {{ param }}",
+            "updated": "A Utilisateur is updated with identifier {{ param }}",
+            "deleted": "A Utilisateur is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Utilisateur {{ id }}?"
+            },
+            "detail": {
+                "title": "Utilisateur"
+            },
+            "login": "Login",
+            "nom": "Nom",
+            "prenoms": "Prenoms",
+            "motdepass": "Motdepass",
+            "telephone": "Telephone",
+            "adresse": "Adresse",
+            "operation": "Operation",
+            "clients": "Clients",
+            "groupeUser": "Groupe User"
+        }
+    }
+}

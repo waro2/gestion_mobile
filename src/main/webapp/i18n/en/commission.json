@@ -1,0 +1,25 @@
+{
+    "gestionMobileApp": {
+        "commission": {
+            "home": {
+                "title": "Commissions",
+                "createLabel": "Create a new Commission",
+                "createOrEditLabel": "Create or edit a Commission",
+                "search": "Search for Commission"
+            },
+            "created": "A new Commission is created with identifier {{ param }}",
+            "updated": "A Commission is updated with identifier {{ param }}",
+            "deleted": "A Commission is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Commission {{ id }}?"
+            },
+            "detail": {
+                "title": "Commission"
+            },
+            "montantmin": "Montantmin",
+            "montantmax": "Montantmax",
+            "commission": "Commission",
+            "comptes": "Comptes"
+        }
+    }
+}

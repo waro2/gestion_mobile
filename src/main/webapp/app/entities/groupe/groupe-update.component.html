@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-groupe-heading" jhiTranslate="gestionMobileApp.groupe.home.createOrEditLabel">Create or edit a Groupe</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!groupe.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="groupe.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.groupe.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                        [(ngModel)]="groupe.nom" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.groupe.description" for="field_description">Description</label>
+                    <input type="text" class="form-control" name="description" id="field_description"
+                        [(ngModel)]="groupe.description" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.groupe.groupeUser" for="field_groupeUser">Groupe User</label>
+                    <select class="form-control" id="field_groupeUser" name="groupeUser" [(ngModel)]="groupe.groupeUser" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="groupeUserOption.id === groupe.groupeUser?.id ? groupe.groupeUser : groupeUserOption" *ngFor="let groupeUserOption of groupeusers; trackBy: trackGroupeUserById">{{groupeUserOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

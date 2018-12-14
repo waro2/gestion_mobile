@@ -1,0 +1,38 @@
+{
+    "name": "Mouvement",
+    "fields": [
+        {
+            "fieldName": "sens",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "reference",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "date",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "montant",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "compte",
+            "otherEntityName": "compte",
+            "otherEntityRelationshipName": "mouvement"
+        }
+    ],
+    "changelogDate": "20181122144342",
+    "entityTableName": "mouvement",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,105 @@
+import { element, by, ElementFinder } from 'protractor';
+
+export class TypeOperationComponentsPage {
+    createButton = element(by.id('jh-create-entity'));
+    deleteButtons = element.all(by.css('jhi-type-operation div table .btn-danger'));
+    title = element.all(by.css('jhi-type-operation div h2#page-heading span')).first();
+
+    async clickOnCreateButton() {
+        await this.createButton.click();
+    }
+
+    async clickOnLastDeleteButton() {
+        await this.deleteButtons.last().click();
+    }
+
+    async countDeleteButtons() {
+        return this.deleteButtons.count();
+    }
+
+    async getTitle() {
+        return this.title.getAttribute('jhiTranslate');
+    }
+}
+
+export class TypeOperationUpdatePage {
+    pageTitle = element(by.id('jhi-type-operation-heading'));
+    saveButton = element(by.id('save-entity'));
+    cancelButton = element(by.id('cancel-save'));
+    retraitInput = element(by.id('field_retrait'));
+    depotInput = element(by.id('field_depot'));
+    achatcreditInput = element(by.id('field_achatcredit'));
+    operationSelect = element(by.id('field_operation'));
+
+    async getPageTitle() {
+        return this.pageTitle.getAttribute('jhiTranslate');
+    }
+
+    async setRetraitInput(retrait) {
+        await this.retraitInput.sendKeys(retrait);
+    }
+
+    async getRetraitInput() {
+        return this.retraitInput.getAttribute('value');
+    }
+
+    async setDepotInput(depot) {
+        await this.depotInput.sendKeys(depot);
+    }
+
+    async getDepotInput() {
+        return this.depotInput.getAttribute('value');
+    }
+
+    async setAchatcreditInput(achatcredit) {
+        await this.achatcreditInput.sendKeys(achatcredit);
+    }
+
+    async getAchatcreditInput() {
+        return this.achatcreditInput.getAttribute('value');
+    }
+
+    async operationSelectLastOption() {
+        await this.operationSelect
+            .all(by.tagName('option'))
+            .last()
+            .click();
+    }
+
+    async operationSelectOption(option) {
+        await this.operationSelect.sendKeys(option);
+    }
+
+    getOperationSelect(): ElementFinder {
+        return this.operationSelect;
+    }
+
+    async getOperationSelectedOption() {
+        return this.operationSelect.element(by.css('option:checked')).getText();
+    }
+
+    async save() {
+        await this.saveButton.click();
+    }
+
+    async cancel() {
+        await this.cancelButton.click();
+    }
+
+    getSaveButton(): ElementFinder {
+        return this.saveButton;
+    }
+}
+
+export class TypeOperationDeleteDialog {
+    private dialogTitle = element(by.id('jhi-delete-typeOperation-heading'));
+    private confirmButton = element(by.id('jhi-confirm-delete-typeOperation'));
+
+    async getDialogTitle() {
+        return this.dialogTitle.getAttribute('jhiTranslate');
+    }
+
+    async clickOnConfirmButton() {
+        await this.confirmButton.click();
+    }
+}

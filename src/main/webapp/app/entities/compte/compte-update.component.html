@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-compte-heading" jhiTranslate="gestionMobileApp.compte.home.createOrEditLabel">Create or edit a Compte</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!compte.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="compte.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.compte.numcompte" for="field_numcompte">Numcompte</label>
+                    <input type="text" class="form-control" name="numcompte" id="field_numcompte"
+                        [(ngModel)]="compte.numcompte" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.compte.datecreation" for="field_datecreation">Datecreation</label>
+                    <div class="d-flex">
+                        <input id="field_datecreation" type="datetime-local" class="form-control" name="datecreation" [(ngModel)]="datecreation"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.compte.datederniereoperation" for="field_datederniereoperation">Datederniereoperation</label>
+                    <div class="input-group">
+                        <input id="field_datederniereoperation" type="text" class="form-control" name="datederniereoperation" ngbDatepicker  #datederniereoperationDp="ngbDatepicker" [(ngModel)]="compte.datederniereoperation"
+                        />
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datederniereoperationDp.toggle()"><fa-icon [icon]="'calendar-alt'"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.compte.operateur" for="field_operateur">Operateur</label>
+                    <select class="form-control" id="field_operateur" name="operateur" [(ngModel)]="compte.operateur" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="operateurOption.id === compte.operateur?.id ? compte.operateur : operateurOption" *ngFor="let operateurOption of operateurs; trackBy: trackOperateurById">{{operateurOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.compte.commission" for="field_commission">Commission</label>
+                    <select class="form-control" id="field_commission" name="commission" [(ngModel)]="compte.commission" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="commissionOption.id === compte.commission?.id ? compte.commission : commissionOption" *ngFor="let commissionOption of commissions; trackBy: trackCommissionById">{{commissionOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.compte.mouvement" for="field_mouvement">Mouvement</label>
+                    <select class="form-control" id="field_mouvement" name="mouvement" [(ngModel)]="compte.mouvement" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="mouvementOption.id === compte.mouvement?.id ? compte.mouvement : mouvementOption" *ngFor="let mouvementOption of mouvements; trackBy: trackMouvementById">{{mouvementOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

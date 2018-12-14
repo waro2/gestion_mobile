@@ -7,6 +7,16 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entités",
+                "compte": "Compte",
+                "operateur": "Operateur",
+                "operation": "Operation",
+                "typeOperation": "Type Operation",
+                "utilisateur": "Utilisateur",
+                "client": "Client",
+                "groupe": "Groupe",
+                "groupeUser": "Groupe User",
+                "commission": "Commission",
+                "mouvement": "Mouvement",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

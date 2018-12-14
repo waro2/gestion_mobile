@@ -1,0 +1,25 @@
+{
+    "gestionMobileApp": {
+        "groupeUser": {
+            "home": {
+                "title": "GroupeUsers",
+                "createLabel": "Créer un nouveau Groupe User",
+                "createOrEditLabel": "Créer ou éditer un Groupe User",
+                "search": "Recherche pour Groupe User"
+            },
+            "created": "Un nouveau Groupe User a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Groupe User avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Groupe User avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Groupe User {{ id }} ?"
+            },
+            "detail": {
+                "title": "Groupe User"
+            },
+            "groupeutilisateur": "Groupeutilisateur",
+            "date": "Date",
+            "groupes": "Groupes",
+            "utilisateurs": "Utilisateurs"
+        }
+    }
+}

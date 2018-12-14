@@ -1,0 +1,40 @@
+{
+    "name": "Operation",
+    "fields": [
+        {
+            "fieldName": "montant",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "fraiscommission",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "dateoperations",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "utilisateurs",
+            "otherEntityName": "utilisateur",
+            "otherEntityRelationshipName": "operation"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "typeoperations",
+            "otherEntityName": "typeOperation",
+            "otherEntityRelationshipName": "operation"
+        }
+    ],
+    "changelogDate": "20181122144335",
+    "entityTableName": "operation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

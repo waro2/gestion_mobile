@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-type-operation-heading" jhiTranslate="gestionMobileApp.typeOperation.home.createOrEditLabel">Create or edit a Type Operation</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!typeOperation.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="typeOperation.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.typeOperation.retrait" for="field_retrait">Retrait</label>
+                    <input type="text" class="form-control" name="retrait" id="field_retrait"
+                        [(ngModel)]="typeOperation.retrait" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.typeOperation.depot" for="field_depot">Depot</label>
+                    <input type="text" class="form-control" name="depot" id="field_depot"
+                        [(ngModel)]="typeOperation.depot" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.typeOperation.achatcredit" for="field_achatcredit">Achatcredit</label>
+                    <input type="text" class="form-control" name="achatcredit" id="field_achatcredit"
+                        [(ngModel)]="typeOperation.achatcredit" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gestionMobileApp.typeOperation.operation" for="field_operation">Operation</label>
+                    <select class="form-control" id="field_operation" name="operation" [(ngModel)]="typeOperation.operation" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="operationOption.id === typeOperation.operation?.id ? typeOperation.operation : operationOption" *ngFor="let operationOption of operations; trackBy: trackOperationById">{{operationOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

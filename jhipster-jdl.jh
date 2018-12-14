@@ -1,0 +1,66 @@
+entity Compte{
+    numcompte String,
+   datecreation Instant,
+   datederniereoperation Instant
+}
+entity Operateur{
+   nom String,
+   datecreation Instant
+}
+entity Operation{
+   montant Double,
+   fraiscommission Double,
+   dateoperations Instant
+}
+entity TypeOperation{
+   retrait String,
+   depot String, 
+   achatcredit String
+}
+entity Utilisateur{
+   login String,
+   nom String,
+   prenoms String,
+   motdepass String,
+   telephone String,
+   adresse String
+}
+entity Client{
+   telephone String,
+   nom String,
+   prenoms String,
+   piecedidentite String,
+}
+entity Groupe{
+   nom String,
+   description String
+}
+entity GroupeUser{
+    groupeutilisateur String
+    date Instant
+}
+entity Commission{
+    montantmin Double,
+    montantmax Double,
+    commission Double
+}
+entity Mouvement{
+    sens String,
+    reference String,
+    date Instant,
+    montant Double
+}
+relationship OneToMany{
+    Operateur{comptes} to Compte
+    Commission{comptes} to Compte
+    Mouvement{compte} to Compte 
+    Operateur{clients} to Client
+    Utilisateur{clients} to Client
+    Operation{utilisateurs} to Utilisateur
+    Operation{typeoperations} to TypeOperation
+    GroupeUser{groupes} to Groupe
+    GroupeUser{utilisateurs} to Utilisateur
+}
+
+
+

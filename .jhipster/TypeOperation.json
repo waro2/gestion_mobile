@@ -1,0 +1,34 @@
+{
+    "name": "TypeOperation",
+    "fields": [
+        {
+            "fieldName": "retrait",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "depot",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "achatcredit",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "operation",
+            "otherEntityName": "operation",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181122144336",
+    "entityTableName": "type_operation",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

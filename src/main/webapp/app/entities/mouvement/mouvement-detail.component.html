@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="mouvement">
+            <h2><span jhiTranslate="gestionMobileApp.mouvement.detail.title">Mouvement</span> {{mouvement.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gestionMobileApp.mouvement.sens">Sens</span></dt>
+                <dd>
+                    <span>{{mouvement.sens}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.mouvement.reference">Reference</span></dt>
+                <dd>
+                    <span>{{mouvement.reference}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.mouvement.date">Date</span></dt>
+                <dd>
+                    <span>{{mouvement.date}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.mouvement.montant">Montant</span></dt>
+                <dd>
+                    <span>{{mouvement.montant}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/mouvement', mouvement.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

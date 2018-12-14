@@ -1,0 +1,46 @@
+{
+    "name": "Compte",
+    "fields": [
+        {
+            "fieldName": "numcompte",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "datecreation",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "datederniereoperation",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "operateur",
+            "otherEntityName": "operateur",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "commission",
+            "otherEntityName": "commission",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "mouvement",
+            "otherEntityName": "mouvement",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181122144333",
+    "entityTableName": "compte",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

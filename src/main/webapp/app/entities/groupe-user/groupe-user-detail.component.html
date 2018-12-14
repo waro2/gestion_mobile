@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="groupeUser">
+            <h2><span jhiTranslate="gestionMobileApp.groupeUser.detail.title">Groupe User</span> {{groupeUser.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gestionMobileApp.groupeUser.groupeutilisateur">Groupeutilisateur</span></dt>
+                <dd>
+                    <span>{{groupeUser.groupeutilisateur}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.groupeUser.date">Date</span></dt>
+                <dd>
+                    <span>{{groupeUser.date}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/groupe-user', groupeUser.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

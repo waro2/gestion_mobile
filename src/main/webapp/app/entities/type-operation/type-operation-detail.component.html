@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="typeOperation">
+            <h2><span jhiTranslate="gestionMobileApp.typeOperation.detail.title">Type Operation</span> {{typeOperation.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gestionMobileApp.typeOperation.retrait">Retrait</span></dt>
+                <dd>
+                    <span>{{typeOperation.retrait}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.typeOperation.depot">Depot</span></dt>
+                <dd>
+                    <span>{{typeOperation.depot}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.typeOperation.achatcredit">Achatcredit</span></dt>
+                <dd>
+                    <span>{{typeOperation.achatcredit}}</span>
+                </dd>
+                <dt><span jhiTranslate="gestionMobileApp.typeOperation.operation">Operation</span></dt>
+                <dd>
+                    <div *ngIf="typeOperation.operation">
+                        <a [routerLink]="['/operation', typeOperation.operation?.id, 'view']">{{typeOperation.operation?.id}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/type-operation', typeOperation.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

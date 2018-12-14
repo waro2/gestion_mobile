@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity Compte.
+    -->
+    <changeSet id="20181122144333-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="operateur_id"
+                                 baseTableName="compte"
+                                 constraintName="fk_compte_operateur_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="operateur"/>
+
+        <addForeignKeyConstraint baseColumnNames="commission_id"
+                                 baseTableName="compte"
+                                 constraintName="fk_compte_commission_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="commission"/>
+
+        <addForeignKeyConstraint baseColumnNames="mouvement_id"
+                                 baseTableName="compte"
+                                 constraintName="fk_compte_mouvement_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mouvement"/>
+
+    </changeSet>
+</databaseChangeLog>
